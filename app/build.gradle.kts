@@ -1,5 +1,24 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
+    id("maven-publish")
+}
+subprojects {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            create<MavenPublication>("release") {
+                // Applies the component for the release build variant.\
+                afterEvaluate {
+                    from(components["release"])
+                }
+                // You can then customize attributes of the publication as shown below.
+                groupId = "om.example.wanandroidsdk"
+                artifactId = "wanandroidsdk"
+                version = "1.0"
+
+            }
+        }
+    }
 }
 
 android {
@@ -7,11 +26,11 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.wanandroidsdk"
+        //applicationId = "com.example.wanandroidsdk"
         minSdk = 24
         targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        //versionCode = 1
+       // versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -26,8 +45,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
