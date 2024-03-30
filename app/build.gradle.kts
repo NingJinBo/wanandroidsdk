@@ -1,4 +1,5 @@
 plugins {
+    //id("com.android.application")
     id("com.android.library")
     id("maven-publish")
 }
@@ -29,8 +30,8 @@ android {
         //applicationId = "com.example.wanandroidsdk"
         minSdk = 24
         targetSdk = 33
-        //versionCode = 1
-       // versionName = "1.0"
+         //versionCode = 1
+        // versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
