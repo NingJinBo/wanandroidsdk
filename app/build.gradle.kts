@@ -15,7 +15,7 @@ subprojects {
                 // You can then customize attributes of the publication as shown below.
                 groupId = "om.example.wanandroidsdk"
                 artifactId = "wanandroidsdk"
-                version = "1.0"
+                version = "1.0.11"
 
             }
         }
