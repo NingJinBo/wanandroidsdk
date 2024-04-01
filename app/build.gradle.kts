@@ -4,7 +4,7 @@ plugins {
     id("maven-publish")
 }
 group = "om.example.wanandroidsdk"
-version = "1.0.12"
+version = "1.0.13"
 
 tasks.register<Jar>("sourcesJar") {
     archiveClassifier.set("sources")
@@ -22,7 +22,7 @@ subprojects {
                 // You can then customize attributes of the publication as shown below.
                 groupId = "om.example.wanandroidsdk"
                 artifactId = "wanandroidsdk"
-                version = "1.0.12"
+                version = "1.0.13"
                 artifact(tasks["sourcesJar"]) // 打包源码到工件中
             }
         }
