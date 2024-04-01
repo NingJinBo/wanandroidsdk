@@ -3,20 +3,27 @@ plugins {
     id("com.android.library")
     id("maven-publish")
 }
+group = "om.example.wanandroidsdk"
+version = "1.0.12"
+
+tasks.register<Jar>("sourcesJar") {
+    archiveClassifier.set("sources")
+    val sources = android.sourceSets.map { set -> set.java.getSourceFiles() }
+    from(sources)
+}
+
 subprojects {
     publishing {
         publications {
             // Creates a Maven publication called "release".
             create<MavenPublication>("release") {
                 // Applies the component for the release build variant.\
-                afterEvaluate {
-                    from(components["release"])
-                }
+                from(components["release"])
                 // You can then customize attributes of the publication as shown below.
                 groupId = "om.example.wanandroidsdk"
                 artifactId = "wanandroidsdk"
-                version = "1.0.11"
-
+                version = "1.0.12"
+                artifact(tasks["sourcesJar"]) // 打包源码到工件中
             }
         }
     }
