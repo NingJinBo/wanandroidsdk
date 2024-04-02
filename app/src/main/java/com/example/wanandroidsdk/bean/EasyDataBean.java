@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @date: 2024/3/31 1:11
  * @desc: 描述
  */
-public class EasyDataBean implements Serializable {
+public class EasyDataBean {
     private String apkLink;        // 文章uri
     private String author;          //
     private int chapterId = 0;              //

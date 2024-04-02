@@ -31,16 +31,6 @@ public class BaseApi {
             httpClientBuilder.writeTimeout(DEFAULT_TIMEOUT, TimeUnit.MILLISECONDS);
             httpClientBuilder.readTimeout(DEFAULT_TIMEOUT, TimeUnit.MILLISECONDS);
             httpClientBuilder.retryOnConnectionFailure(true);
-
-            //根据当前调试状态，是否显示请求日志
-      /*      HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
-                @Override
-                public void log(String message) {
-                    LogUtils.e(tagName + "", message);
-                }
-            });
-            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-            httpClientBuilder.addInterceptor(interceptor);*/
             httpClientBuilder.addInterceptor(new CustomLoggingInterceptor());
         } catch (Exception e) {
             e.printStackTrace();
