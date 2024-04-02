@@ -1,5 +1,7 @@
 package com.example.wanandroidsdk.http.api;
 
+import android.util.Log;
+
 import com.example.wanandroidsdk.app.WanApp;
 import com.example.wanandroidsdk.http.header.HeaderInterceptor;
 import com.example.wanandroidsdk.utils.LogUtils;
@@ -14,6 +16,7 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
 
 /**
@@ -37,14 +40,14 @@ public class BaseApi {
             httpClientBuilder.retryOnConnectionFailure(true);
 
             //根据当前调试状态，是否显示请求日志
-            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+      /*      HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
                 @Override
                 public void log(String message) {
                     LogUtils.e(tagName + "", message);
                 }
             });
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-            httpClientBuilder.addInterceptor(interceptor);
+            httpClientBuilder.addInterceptor(interceptor);*/
             httpClientBuilder.addInterceptor(new CustomLoggingInterceptor());
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,8 +64,20 @@ public class BaseApi {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
+            long startTime = System.currentTimeMillis();
+            Response response = chain.proceed(chain.request());
 
-            return chain.proceed(request);
+            long endTime = System.currentTimeMillis();
+            long duration = endTime - startTime;
+            okhttp3.MediaType mediaType = response.body().contentType();
+            String content = response.body().string();
+            LogUtils.e(TAG, "----------Request Start----------------");
+            LogUtils.e(TAG, "| " + request.toString() + request.headers().toString());
+            LogUtils.e(TAG, "| Response:" + content);
+            LogUtils.e(TAG, "----------Request End:" + duration + "毫秒----------");
+            return response.newBuilder()
+                    .body(ResponseBody.create(mediaType, content))
+                    .build();
         }
     }
 }
