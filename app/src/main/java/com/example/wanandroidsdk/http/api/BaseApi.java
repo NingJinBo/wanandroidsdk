@@ -28,8 +28,7 @@ public class BaseApi {
         OkHttpClient.Builder httpClientBuilder;
 
         //设置缓存路径，系统默认缓存路径，并且限制缓存大小500m
-        Cache cache = new Cache(new File(Objects.requireNonNull(WanApp.getInstance()).getCacheDir(), "HttpCache"), 500);
-        httpClientBuilder = new OkHttpClient.Builder().cache(cache);
+        httpClientBuilder = new OkHttpClient.Builder();
         try {
             httpClientBuilder.addNetworkInterceptor(new HeaderInterceptor());
             httpClientBuilder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.MILLISECONDS);
