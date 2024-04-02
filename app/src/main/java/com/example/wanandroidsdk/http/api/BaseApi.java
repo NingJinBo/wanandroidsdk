@@ -1,23 +1,16 @@
 package com.example.wanandroidsdk.http.api;
 
-import android.util.Log;
-
-import com.example.wanandroidsdk.app.WanApp;
 import com.example.wanandroidsdk.http.header.HeaderInterceptor;
 import com.example.wanandroidsdk.utils.LogUtils;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
-import okhttp3.Cache;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
-import okhttp3.logging.HttpLoggingInterceptor;
 
 /**
  * @auth: njb
@@ -69,10 +62,11 @@ public class BaseApi {
 
             long endTime = System.currentTimeMillis();
             long duration = endTime - startTime;
+            assert response.body() != null;
             okhttp3.MediaType mediaType = response.body().contentType();
             String content = response.body().string();
             LogUtils.e(TAG, "----------Request Start----------------");
-            LogUtils.e(TAG, "| " + request.toString() + request.headers().toString());
+            LogUtils.e(TAG, "| " + request + request.headers());
             LogUtils.e(TAG, "| Response:" + content);
             LogUtils.e(TAG, "----------Request End:" + duration + "毫秒----------");
             return response.newBuilder()
