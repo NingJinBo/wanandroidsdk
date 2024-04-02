@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 group = 'om.example.wanandroidsdk'
-version = '1.0.17'
+version = '1.0.18'
 
 
 afterEvaluate {
@@ -17,7 +17,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'om.example.wanandroidsdk'
                 artifactId = 'wanandroidsdk'
-                version = '1.0.17'
+                version = '1.0.18'
             }
         }
     }
