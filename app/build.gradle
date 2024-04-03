@@ -3,8 +3,9 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
 }
+
 group = 'om.example.wanandroidsdk'
-version = '1.0.18'
+sdkVersion = '1.0.18'
 
 
 afterEvaluate {
@@ -15,9 +16,9 @@ afterEvaluate {
                 // Applies the component for the release build variant.\
                 from components.release
                 // You can then customize attributes of the publication as shown below.
-                groupId = 'om.example.wanandroidsdk'
+                groupId = group
                 artifactId = 'wanandroidsdk'
-                version = '1.0.18'
+                version = sdkVersion
             }
         }
     }
@@ -31,8 +32,8 @@ android {
         //applicationId = "com.example.wanandroidsdk"
         minSdk  24
         targetSdk  34
-         //versionCode = 1
-        // versionName = "1.0"
+         versionCode = 1
+         versionName = "1.0"
 
         testInstrumentationRunner  "androidx.test.runner.AndroidJUnitRunner"
     }
