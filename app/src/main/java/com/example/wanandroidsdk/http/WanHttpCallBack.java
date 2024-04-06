@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @auth: njb
  * @date: 2024/3/31 1:10
- * @desc: 描述
+ * @desc: 请求回调
  */
 public interface WanHttpCallBack {
     Boolean onResponse(List<EasyDataBean> result);
