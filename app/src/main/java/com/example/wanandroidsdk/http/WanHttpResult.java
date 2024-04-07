@@ -3,7 +3,7 @@ package com.example.wanandroidsdk.http;
 /**
  * @author: njb
  * @date: 2024/3/30 17:32
- * @desc:
+ * @desc:请求结果回调类
  */
 public class WanHttpResult<T> {
     /**

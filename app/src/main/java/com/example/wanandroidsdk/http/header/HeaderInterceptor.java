@@ -10,7 +10,7 @@ import okhttp3.Response;
 /**
  * @author: njb
  * @date: 2021/2/22 10:41
- * @desc:
+ * @desc:请求头部
  */
 public class HeaderInterceptor implements Interceptor {
     @Override
