@@ -10,7 +10,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 /**
  * @auth: njb
- * @date: 2024/3/31 23:45
+ * @date: 2024/3/31 13:45
  * @desc: 描述
  */
 public class EasyApi extends BaseApi{
