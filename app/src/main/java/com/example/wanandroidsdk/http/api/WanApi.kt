@@ -9,7 +9,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 object WanApi  {
 
-    private val WanApi by lazy {
+    private val wanApi by lazy {
         //获取请求客户端
         val okHttpClient: OkHttpClient.Builder = BaseApi.getHttpClient(
             WanApi::class.java.getSimpleName()
@@ -26,6 +26,6 @@ object WanApi  {
     }
 
     fun getHttp():ApiService{
-        return WanApi
+        return wanApi
     }
 }
