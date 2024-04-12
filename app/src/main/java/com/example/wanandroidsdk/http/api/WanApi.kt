@@ -25,7 +25,7 @@ object WanApi  {
         retrofit.create(ApiService::class.java)
     }
 
-    fun getApi():ApiService{
+    fun getHttp():ApiService{
         return WanApi
     }
 }
