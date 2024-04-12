@@ -42,7 +42,7 @@ public class BaseApi {
 
     static class CustomLoggingInterceptor implements Interceptor {
 
-        private String TAG = BaseApi.class.getSimpleName();
+        private String TAG = "okhttp";
 
         @Override
         public Response intercept(Chain chain) throws IOException {

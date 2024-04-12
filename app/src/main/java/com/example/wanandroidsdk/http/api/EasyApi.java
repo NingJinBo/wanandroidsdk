@@ -25,7 +25,7 @@ public class EasyApi extends BaseApi{
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .baseUrl(Constants.EasyPlayHostDefault)
+                    .baseUrl(Constants.BASE_URL)
                     .build().create(ApiService.class);
         }
         return SERVICE;
