@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.wanandroidsdk.http.api.EasyApi
+import com.example.wanandroidsdk.http.api.WanApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.MainScope
@@ -20,11 +21,10 @@ class MainActivity : AppCompatActivity() {
     fun getData(view: View) {
         view.setOnClickListener {
             MainScope().launch(Dispatchers.Main) {
-                val result = EasyApi.getDefault().getBanner()
+                val result = WanApi.getApi().getBanner()
                 if(result.data != null){
                     Log.d(TAG,"===数据请求成功===${result.data}")
                 }
-
             }
         }
     }
