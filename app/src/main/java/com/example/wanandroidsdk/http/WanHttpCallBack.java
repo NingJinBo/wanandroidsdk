@@ -1,6 +1,7 @@
 package com.example.wanandroidsdk.http;
 
-import com.example.wanandroidsdk.bean.EasyDataBean;
+
+import com.example.wanandroidsdk.bean.WanDataBean;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  * @desc: 请求回调
  */
 public interface WanHttpCallBack {
-    Boolean onResponse(List<EasyDataBean> result);
+    Boolean onResponse(List<WanDataBean> result);
 
     Boolean onFailure(String message);
 }
