@@ -24,17 +24,14 @@ class MainActivity : AppCompatActivity() {
                 if(result.data != null){
                     Log.d(TAG,"===数据请求成功===${result.data}")
                 }
-                val artists = EasyApi.getDefault().articleList(1)
-                if(artists.data != null){
-                    Log.d(TAG,"===文章列表获取成功===${artists.data}")
-                }
+
             }
         }
     }
 
     fun getHotKey(view: View) {
         view.setOnClickListener {
-            GlobalScope.launch(Dispatchers.Main) {
+            MainScope().launch(Dispatchers.Main) {
                 val hotList = EasyApi.getDefault().hotKeyList()
                 if(hotList.data != null){
                     Log.d(TAG,"===搜索热词列表获取成功===${hotList.data}")
@@ -49,6 +46,17 @@ class MainActivity : AppCompatActivity() {
                 val knowList = EasyApi.getDefault().knowList()
                 if(knowList.data != null){
                     Log.d(TAG,"===知识列表获取成功===${knowList.data}")
+                }
+            }
+        }
+    }
+
+    fun getArticleList(view: View) {
+        view.setOnClickListener {
+            MainScope().launch {
+                val artists = EasyApi.getDefault().articleList(1)
+                if(artists.data != null){
+                    Log.d(TAG,"===文章列表获取成功===${artists.data}")
                 }
             }
         }
