@@ -1,5 +1,6 @@
 plugins {
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.androidApplication)
+   // alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.mavenPublish)
 }
@@ -14,9 +15,9 @@ afterEvaluate {
             // Creates a Maven publication called "release".
             create<MavenPublication>("release") {
                 // Applies the component for the release build variant.\
-                from(components["release"])
+               // from(components["release"])
                 // You can then customize attributes of the publication as shown below.
-                groupId = "om.example.wanandroidsdk"
+                groupId = (group.toString())
                 artifactId = "wanandroidsdk-kts"
                 version = version
             }
@@ -75,4 +76,5 @@ dependencies {
     implementation(libs.adapter.rxjava2)
     implementation(libs.converter.scalars)
     implementation(libs.converter.gson)
+    implementation(libs.androidx.core.ktx)
 }
