@@ -1,7 +1,6 @@
 package com.example.wanandroidsdk.http.api;
 
 import com.example.wanandroidsdk.http.header.HeaderInterceptor;
-import com.example.wanandroidsdk.utils.LogUtils;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

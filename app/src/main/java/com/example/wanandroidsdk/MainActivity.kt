@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.blankj.utilcode.util.LogUtils
 import com.example.wanandroidsdk.http.api.WanApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             MainScope().launch(Dispatchers.Main) {
                 val result = WanApi.getHttp().getBanner()
                 if(result.data != null){
-                    Log.d(TAG,"===数据请求成功===${result.data}")
+                    LogUtils.d(TAG,"===数据请求成功===${result.data}")
                 }
             }
         }
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             MainScope().launch(Dispatchers.Main) {
                 val hotList = WanApi.getHttp().hotKeyList()
                 if(hotList.data != null){
-                    Log.d(TAG,"===搜索热词列表获取成功===${hotList.data}")
+                    LogUtils.d(TAG,"===搜索热词列表获取成功===${hotList.data}")
                 }
             }
         }
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             MainScope().launch(Dispatchers.Main) {
                 val knowList = WanApi.getHttp().knowList()
                 if(knowList.data != null){
-                    Log.d(TAG,"===知识列表获取成功===${knowList.data}")
+                    LogUtils.d(TAG,"===知识列表获取成功===${knowList.data}")
                 }
             }
         }
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             MainScope().launch {
                 val artists = WanApi.getHttp().articleList(1)
                 if(artists.data != null){
-                    Log.d(TAG,"===文章列表获取成功===${artists.data}")
+                    LogUtils.d(TAG,"===文章列表获取成功===${artists.data}")
                 }
             }
         }
