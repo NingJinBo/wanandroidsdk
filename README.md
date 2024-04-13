@@ -1,2 +1,4 @@
 # wanandroidsdk
-使用wanandroidApi编写的简单sdkdemo
+使用wanandroidApi编写的简单sdkdemo，
+master分支是使用java语法
+dev_kts分支是使用kotlin和kts语法，包含kts发布aar
