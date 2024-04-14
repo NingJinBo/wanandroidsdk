@@ -7,7 +7,7 @@ import android.app.Application
  * @date: 2024/4/14 12:58
  * @desc: 描述
  */
-class WanAndroidApp : Application() {
+class WanApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -15,7 +15,7 @@ class WanAndroidApp : Application() {
 
     companion object{
        val instance by lazy (LazyThreadSafetyMode.SYNCHRONIZED){
-           WanAndroidApp()
+           WanApp()
        }
     }
 }
