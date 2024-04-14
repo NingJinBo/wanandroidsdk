@@ -1,69 +1,44 @@
-package com.example.wanandroidsdk.http;
+package com.example.wanandroidsdk.http
 
 /**
  * @author: njb
  * @date: 2024/3/30 17:32
  * @desc:
  */
-public class WanHttpResult<T> {
+class WanHttpResult<T> {
     /**
      * 记录请求回来的状态描述
      */
-    private String errorMsg;
+    var errorMsg: String? = null
+
     /**
      * 记录请求回来的错误状态描述
      */
-    private String code = "";
+    var code = ""
+
     /**
      * 记录请求回来的错误状态描述
      */
-    private Integer errorCode = 0;
+    var errorCode: Int? = 0
+
     /**
      * 记录返回的数据
      */
-    private T data;
+    var data: T? = null
+        private set
 
     /**
      * 业务是否成功
      */
-    public boolean isBizSucceed(boolean defaultValue) {
-        return null == errorCode ? defaultValue : errorCode == 0;
+    fun isBizSucceed(defaultValue: Boolean): Boolean {
+        return if (null == errorCode) defaultValue else errorCode == 0
     }
 
-    public void setMessage(String message) {
-        this.errorMsg = message;
+    fun setMessage(message: String?) {
+        errorMsg = message
     }
 
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Integer getErrorCode() {
-        return errorCode;
-    }
-
-    public void setErrorCode(Integer errorCode) {
-        this.errorCode = errorCode;
+    fun setData(data: T) {
+        this.data = data
     }
 }
