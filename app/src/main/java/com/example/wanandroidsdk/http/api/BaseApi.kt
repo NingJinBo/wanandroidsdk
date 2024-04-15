@@ -1,6 +1,5 @@
 package com.example.wanandroidsdk.http.api
 
-import com.example.wanandroidsdk.http.header.HeaderInterceptor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -9,6 +8,7 @@ import okhttp3.ResponseBody
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 import com.blankj.utilcode.util.LogUtils
+import com.example.wanandroidsdk.http.header.WanHeaderInterceptor
 
 /**
  * @auth: njb
@@ -22,7 +22,7 @@ open class BaseApi {
             //设置缓存路径，系统默认缓存路径，并且限制缓存大小500m
             val httpClientBuilder: OkHttpClient.Builder = OkHttpClient.Builder()
             try {
-                httpClientBuilder.addNetworkInterceptor(HeaderInterceptor())
+                httpClientBuilder.addNetworkInterceptor(WanHeaderInterceptor())
                 httpClientBuilder.connectTimeout(
                     DEFAULT_TIMEOUT.toLong(),
                     TimeUnit.MILLISECONDS

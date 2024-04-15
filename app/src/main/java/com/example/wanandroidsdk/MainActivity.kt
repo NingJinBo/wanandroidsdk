@@ -1,11 +1,9 @@
 package com.example.wanandroidsdk
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.LogUtils
-import com.example.wanandroidsdk.app.WanAndroidApp
 import com.example.wanandroidsdk.http.api.WanApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
