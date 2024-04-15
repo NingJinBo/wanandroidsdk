@@ -1,5 +1,6 @@
 package com.example.wanandroidsdk.http.api
 
+import com.example.wanandroidsdk.constant.Constants
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
