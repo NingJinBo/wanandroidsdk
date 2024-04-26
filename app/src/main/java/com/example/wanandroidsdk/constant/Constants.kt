@@ -19,4 +19,7 @@ object Constants {
     const val NAVI = "/navi/json"
 
     const val PROJECT_TREE = "/project/tree/json"
+
+    const val POST_NOTIFICATIONS = "android.permission.POST_NOTIFICATIONS"
+
 }
