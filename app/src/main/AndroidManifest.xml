@@ -6,6 +6,11 @@
 
     <application
         android:allowBackup="true">
+        <receiver android:name=".utils.USBBroadcastReceiver"
+            android:exported="true"><intent-filter android:priority="800">
+               <action android:name="android.hardware.usb.action.USB_STATE"/>
+             </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.example.wanandroidsdk
 
 import android.app.Activity
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -38,5 +39,9 @@ class TestActivity:AppCompatActivity() {
                 AppUtils.openNotificationSettingsForApp(this)
             }
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
