@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true">
-        <receiver android:name=".utils.USBBroadcastReceiver"
-            android:exported="true"><intent-filter android:priority="800">
-               <action android:name="android.hardware.usb.action.USB_STATE"/>
-             </intent-filter>
-        </receiver>
     </application>
 
 </manifest>
