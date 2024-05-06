@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.mavenPublish)
+    //id("maven-publish")
 }
 
 group = "om.example.wanandroidsdk"
